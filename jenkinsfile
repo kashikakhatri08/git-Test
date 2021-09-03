@@ -6,7 +6,7 @@ pipeline{
                 script{
                     
                     checkout(scm)
-
+                    println("msgggggggggggg")
                     println(currentBuild.changeSets)
 
                     
