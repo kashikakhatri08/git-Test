@@ -6,7 +6,7 @@ pipeline{
                 script{
                     
                     checkout(scm)
-                    println("msggggggggg")
+                    println("msggggggg")
                     env.GIT_COMMIT_MSG = bat (script: 'git log -1', returnStdout: true).trim()
                     println(env.GIT_COMMIT_MSG)
 
