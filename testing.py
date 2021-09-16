@@ -119,8 +119,8 @@ for entry in occ:
     myDict[bldJobName] = buildNumbers
 
 
-down_stream_job = J.get_job_name()
-print(down_stream_job)
+# down_stream_job = J.get_job_name()
+# print(down_stream_job)
 # print(myDict)
 # doen_job = J["testing_folder/"+ bldJobName]
 # print(doen_job)
