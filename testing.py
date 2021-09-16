@@ -230,6 +230,8 @@ error_ex["errror_key"]=error_list
 
 result_dict.update(error_ex)
 print(dict_ex)
+process = subprocess.Popen(["git", "log -1"], stdout=subprocess.PIPE)
+print(process)
 with open('data.json', 'w') as json_file:
     data = []
     json.dump(result_dict, json_file)
