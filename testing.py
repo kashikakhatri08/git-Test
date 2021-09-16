@@ -8,6 +8,7 @@ import os
 import jenkinsapi
 import pytz
 import requests
+import subprocess
 
 import urllib3
 from jenkinsapi.jenkins import Jenkins
