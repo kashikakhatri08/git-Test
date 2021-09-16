@@ -61,7 +61,7 @@ pipeline{
         }
         failure {
             script {
-                echo "failure"
+                echo "failures"
                 bat label: '', script: '''python testing.py --username="kashika" --password="kashika08"'''
                 archiveArtifacts artifacts: '*.json'
                 
