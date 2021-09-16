@@ -55,14 +55,14 @@ pipeline{
                  //env.GIT_COMMIT_MSG = bat (script: 'git log -1 --pretty=full ${env.GIT_COMMIT}', returnStdout: true).trim()
                  //echo "${env.GIT_COMMIT_MSG}"
                  //echo "${_scm.GIT_COMMIT}"
-                 bat label: '', script: ''' ${WORKSPACE}/python testing.py --username="kashika" --password="kashika08"'''
+                 sh label: '', script: ''' ${WORKSPACE}/python testing.py --username="kashika" --password="kashika08"'''
                  archiveArtifacts artifacts: '*.json'
             }
         }
         failure {
             script {
                 echo "failures"
-                bat label: '', script: '''python testing.py --username="kashika" --password="kashika08"'''
+                sh label: '', script: '''python testing.py --username="kashika" --password="kashika08"'''
                 archiveArtifacts artifacts: '*.json'
                 
             }
