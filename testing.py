@@ -231,10 +231,12 @@ error_ex["errror_key"]=error_list
 
 result_dict.update(error_ex)
 print(dict_ex)
-cmd = 'bat (script: 'git log -1 --pretty=full ${env.GIT_COMMIT}', returnStdout: true).trim()'
-process = subprocess.getoutput(cmd)
+lines = subprocess.check_output(
+        ['git', 'log'], stderr=subprocess.STDOUT
+    ).split('\n')
 
-print(process)
+
+print(lines)
 with open('data.json', 'w') as json_file:
     data = []
     json.dump(result_dict, json_file)
