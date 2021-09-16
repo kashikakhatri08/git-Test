@@ -232,8 +232,8 @@ error_ex["errror_key"]=error_list
 result_dict.update(error_ex)
 print(dict_ex)
 lines = subprocess.check_output(
-        ['git', 'log'], stderr=subprocess.STDOUT
-    ).split('\n')
+       ['git', 'log'], stderr=subprocess.STDOUT
+       ).decode("utf-8").split("\n")
 
 
 print(lines)
