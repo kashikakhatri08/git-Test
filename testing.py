@@ -239,7 +239,9 @@ lines = subprocess.check_output(
 # print(lines)
 stream = os.popen('git log')
 output = stream.read()
-print(output)
+# print(output)
+result = re.findall(r'CHANGELIST_local:.*'+ str(2) , bld_console)
+print(result)
 with open('data.json', 'w') as json_file:
     data = []
     json.dump(result_dict, json_file)
