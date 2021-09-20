@@ -253,7 +253,7 @@ for res in result:
 #     split_1 = res_1[1]
 #     print("split_1")
 #     print(split_1)
-    res_2 = re.split(":", first_split)
+    res_2 = re.split(":", first_split[3])
     print("res_2")
     print(res_2)
     project = res_2[0]
