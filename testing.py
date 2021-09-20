@@ -236,7 +236,7 @@ lines = subprocess.check_output(
        ).decode("utf-8").split("\n")
 
 
-print(lines)
+//print(lines)
 stream = os.popen('git log')
 print(stream)
 with open('data.json', 'w') as json_file:
