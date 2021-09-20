@@ -259,7 +259,7 @@ for res in result:
     res_0 = re.split("\[", res_2[0])
     print("res_0")
     print(res_0)
-    project = res_0[0]
+    project = res_0[1]
     print("project")
     print(project)
     res_3 = re.split("]",res_2[1])
