@@ -245,7 +245,7 @@ output = stream.read()
 result = re.findall(r'.*' + 'CHANGELIST_local:' + '.*(?:.*\n){' + str(2) + '}.*', bld_console)
 print(result)
 for res in result:
-    res_1 = re.split("] [", res)'
+    res_1 = re.split("] [", res)
     print("res_1"+res_1)
     split_1 = res_1[1]
     print("split_1"+split_1)
