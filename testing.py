@@ -238,7 +238,8 @@ lines = subprocess.check_output(
 
 # print(lines)
 stream = os.popen('git log')
-print(stream)
+output = stream.read()
+print(output)
 with open('data.json', 'w') as json_file:
     data = []
     json.dump(result_dict, json_file)
