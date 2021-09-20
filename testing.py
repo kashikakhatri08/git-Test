@@ -247,13 +247,13 @@ print(result)
 for res in result:
     first_split = res.split()
     print(first_split)
-    res_1 = re.split("]\s[", res)
-    print("res_1")
-    print(res_1)
-    split_1 = res_1[1]
-    print("split_1")
-    print(split_1)
-    res_2 = re.split(":", split_1)
+#     res_1 = re.split("]\s[", res)
+#     print("res_1")
+#     print(res_1)
+#     split_1 = res_1[1]
+#     print("split_1")
+#     print(split_1)
+    res_2 = re.split(":", first_split)
     print("res_2")
     print(res_2)
     project = res_2[0]
