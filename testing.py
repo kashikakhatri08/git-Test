@@ -244,6 +244,29 @@ output = stream.read()
 
 result = re.findall(r'.*' + 'CHANGELIST_local:' + '.*(?:.*\n){' + str(2) + '}.*', bld_console)
 print(result)
+for res in result:
+    res_1 = re.split("] [", res)'
+    print("res_1"+res_1)
+    split_1 = res_1[1]
+    print("split_1"+split_1)
+    res_2 = re.split(":", split_1)
+     print("res_2"+res_2)
+    project = res_2[0]
+     print("project"+project)
+    res_3 = re.split("]",res_2[1])
+     print("res_3"+res_3)
+    res_4 = re.split(",",res_3[0])
+     print("res_4"+res_4)
+    changelist = res_4[0]
+     print("changelist"+changelist)
+    patchset = res_4[1]
+     print("patchset"+patchset)
+    
+    
+    
+    
+    
+    
 
 
 with open('data.json', 'w') as json_file:
