@@ -256,7 +256,10 @@ for res in result:
     res_2 = re.split(":", first_split[3])
     print("res_2")
     print(res_2)
-    project = res_2[0]
+    res_0 = re.split("\[", res_2[0])
+    print("res_0")
+    print(res_0)
+    project = res_0[0]
     print("project")
     print(project)
     res_3 = re.split("]",res_2[1])
