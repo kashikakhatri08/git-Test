@@ -37,8 +37,8 @@ pipeline{
                    echo "hello"
                    echo 'NODE_NAME=deulm2hu030'
                    echo 'androidVersion --- android9'
-                   echo 'CHANGELIST_local:'
-                   echo '[AVDXP/vendor/ford/modules/avdxp_common:10096,1]'                   
+                   echo '['[2021-09-20T02:28:33.810Z] CHANGELIST_local:\n[2021-09-20T02:28:33.810Z] [AVDXP/vendor/ford/modules/avdxp_common:10096,1]']'
+                                     
                 }
             }
         
