@@ -33,7 +33,11 @@ def rest_api_call(url):
     response = requests.get(url, auth=(args.username, args.password), verify=False)
     return response
 
-
+def was_aborted(text):
+    occ = re.findall(r"Finished: ABORTED", text)
+    if not occ:
+        return False
+    return True
 J = Jenkins('http://localhost:8080/', username=args.username, password=args.password, ssl_verify=False, timeout=10)
 
 PARENT_BUILD_NUMBER = int(os.environ['BUILD_NUMBER'])
