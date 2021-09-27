@@ -48,6 +48,17 @@ print("------------------"+str(job_url))
 # print(job_url.get_downstream_jobs())
 print("----------------")
 bld = job_url.get_build(PARENT_BUILD_NUMBER)
+bld_console = bld.get_console()
+bldState = "Pass"
+isGood = bld.is_good()
+if not isGood:
+    bldState = "FAIL"
+    if was_aborted(bld_console):
+        bldState = "ABORTED"
+    else:
+        if bld.is_running():
+                bldState = "RUNNING"
+print(bldState)
 bld_time = bld.get_duration().total_seconds()
 print(bld_time)
 # info = J.get_job_info(os.environ['JOB_NAME'])
