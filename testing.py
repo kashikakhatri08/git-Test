@@ -44,10 +44,12 @@ PARENT_BUILD_NUMBER = int(os.environ['BUILD_NUMBER'])
 job_name = os.environ['JOB_BASE_NAME']
 print("-------"+job_name)
 job_url = J[os.environ['JOB_NAME']]
-job_status = J[os.environ['currentBuild']]
+# job_status = J[os.environ['currentBuild']]
 # job_status_second = J[os.environ['result']]
+build_info=j.get_build_info('sample123',last_build_number)
+job_status = build_info['result']
 print(job_status)
-print(job_status_second)
+# print(job_status_second)
 print("------------------"+str(job_url))
 
 # print(os.environ['BUILD_URL'])
