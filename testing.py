@@ -59,7 +59,7 @@ print("------------------"+str(job_url))
 # print(job_url.get_downstream_jobs())
 print("----------------")
 bld = job_url.get_build(PARENT_BUILD_NUMBER)
-print(bld.get_resultset())
+# print(bld.get_resultset())
 print(bld.get_status())
 bld_console = bld.get_console()
 bldState = "Pass"
