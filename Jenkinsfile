@@ -18,8 +18,7 @@ pipeline{
                     env.bld = "${currentBuild.buildVariables}"
                     // echo "${currentBuild.rawBuild.parent.url}"
                     echo "${currentBuild.rawBuild}"
-                    echo "${currentBuild.result}"
-                    echo "${currentBuild.currentResult}"
+                   
                     echo "stages --- [prepare:[state:enabled, scripts:[getChangeList, getStackTarget]], build:[state:enabled, scripts:[aospSyncWS, aospBuild]], test:[state:enabled, testStage:T1, testJobWait:true, testJobPropagate:false, scripts:[aospTest]], publish:[state:disabled, scripts:[]], notification:[state:enabled, emailAddress:F_AVDXP_Gerrit_Integration@elektrobit.com, scripts:[aospNotification]], cleanup:[state:enabled, scripts:[aospCleanUpWs]]]"
                     //echo "STAGE_NAME='TX'"
                 }
@@ -57,6 +56,8 @@ pipeline{
                  //env.GIT_COMMIT_MSG = bat (script: 'git log -1 --pretty=full ${env.GIT_COMMIT}', returnStdout: true).trim()
                  //echo "${env.GIT_COMMIT_MSG}"
                  //echo "${_scm.GIT_COMMIT}"
+                 echo "${currentBuild.result}"
+                 echo "${currentBuild.currentResult}"
                  bat label: '', script: ''' python testing.py --username="kashika" --password="kashika08"'''
                  archiveArtifacts artifacts: '*.json'
             }
