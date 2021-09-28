@@ -46,7 +46,7 @@ print("-------"+job_name)
 job_url = J[os.environ['JOB_NAME']]
 # job_status = J[os.environ['currentBuild']]
 # job_status_second = J[os.environ['result']]
-build_info=J.get_build_info(job_url,PARENT_BUILD_NUMBER)
+build_info = J[jenkins.Jenkins.get_build_info(job_url,PARENT_BUILD_NUMBER)]
 job_status = build_info['result']
 print(job_status)
 # print(job_status_second)
