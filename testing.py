@@ -47,9 +47,9 @@ print("-------"+job_name)
 job_url = J[os.environ['JOB_NAME']]
 # job_status = J[os.environ['currentBuild']]
 # job_status_second = J[os.environ['result']]
-build_info = J[jenkins.Jenkins.get_build_info(job_url,PARENT_BUILD_NUMBER)]
-job_status = build_info['result']
-print(job_status)
+# build_info = J[jenkins.Jenkins.get_build_info(job_url.toString(),PARENT_BUILD_NUMBER)]
+# job_status = build_info['result']
+# print(job_status)
 # print(job_status_second)
 print("------------------"+str(job_url))
 
@@ -59,6 +59,8 @@ print("------------------"+str(job_url))
 # print(job_url.get_downstream_jobs())
 print("----------------")
 bld = job_url.get_build(PARENT_BUILD_NUMBER)
+print(bld.get_resultset())
+print(bld.get_status())
 bld_console = bld.get_console()
 bldState = "Pass"
 isGood = bld.is_good()
