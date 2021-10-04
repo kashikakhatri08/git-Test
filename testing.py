@@ -48,7 +48,9 @@ job_url = J[os.environ['JOB_NAME']]
 bld = job_url.get_build(PARENT_BUILD_NUMBER)
 job_api = os.environ['BUILD_URL'] +"api/json"
 rest_api = rest_api_call(job_api)
-print(rest_api)
+pipeline_data = rest_api.json()
+CI_CT_duration = pipeline_data["duration"]
+print(duration)
 print("-----------------")
 # job_status = J[os.environ['currentBuild']]
 # job_status_second = J[os.environ['result']]
