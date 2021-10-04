@@ -72,7 +72,7 @@ if not isGood:
         if bld.is_running():
                 bldState = "RUNNING"
 # print(bldState)
-bld_time = bld.get_duration()
+bld_time = bld.get_estimated_duration()
 print(bld_time)
 # info = J.get_job_info(os.environ['JOB_NAME'])
 # print(info)
