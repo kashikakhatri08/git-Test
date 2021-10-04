@@ -45,6 +45,10 @@ PARENT_BUILD_NUMBER = int(os.environ['BUILD_NUMBER'])
 job_name = os.environ['JOB_BASE_NAME']
 print("-------"+job_name)
 job_url = J[os.environ['JOB_NAME']]
+job_api = job_url+"/"+PARENT_BUILD_NUMBER+"/"+"api/json"
+rest_api = rest_api_call(job_api)
+print(rest_api)
+print("-----------------")
 # job_status = J[os.environ['currentBuild']]
 # job_status_second = J[os.environ['result']]
 # build_info = J[jenkins.Jenkins.get_build_info(job_url.toString(),PARENT_BUILD_NUMBER)]
