@@ -45,7 +45,8 @@ PARENT_BUILD_NUMBER = int(os.environ['BUILD_NUMBER'])
 job_name = os.environ['JOB_BASE_NAME']
 print("-------"+job_name)
 job_url = J[os.environ['JOB_NAME']]
-job_api = str(job_url)+"/"+str(PARENT_BUILD_NUMBER)+"/"+"api/json"
+bld = job_url.get_build(PARENT_BUILD_NUMBER)
+job_api = bld +"/api/json"
 rest_api = rest_api_call(job_api)
 print(rest_api)
 print("-----------------")
