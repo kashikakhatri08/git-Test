@@ -49,7 +49,7 @@ bld = job_url.get_build(PARENT_BUILD_NUMBER)
 job_api = bld 
 #+"/api/json"
 # rest_api = rest_api_call(job_api)
-# print(rest_api)
+print(job_api)
 print("-----------------")
 # job_status = J[os.environ['currentBuild']]
 # job_status_second = J[os.environ['result']]
