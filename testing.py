@@ -50,7 +50,7 @@ job_api = os.environ['BUILD_URL'] +"api/json"
 rest_api = rest_api_call(job_api)
 pipeline_data = rest_api.json()
 CI_CT_duration = pipeline_data["duration"]
-print(duration)
+print(CI_CT_duration)
 print("-----------------")
 # job_status = J[os.environ['currentBuild']]
 # job_status_second = J[os.environ['result']]
