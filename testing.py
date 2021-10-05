@@ -45,7 +45,7 @@ PARENT_BUILD_NUMBER = int(os.environ['BUILD_NUMBER'])
 job_name = os.environ['JOB_BASE_NAME']
 job_param = os.environ['CHANGELIST']
 print(job_param)
-li = list(job_param.split(" "))
+li = list(job_param.split("\n"))
 print(type(job_param))
 print(li)
 print("-------"+job_name)
