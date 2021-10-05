@@ -45,6 +45,7 @@ PARENT_BUILD_NUMBER = int(os.environ['BUILD_NUMBER'])
 job_name = os.environ['JOB_BASE_NAME']
 job_param = os.environ['CHANGELIST']
 print(job_param)
+print(type(job_param))
 print("-------"+job_name)
 job_url = J[os.environ['JOB_NAME']]
 bld = job_url.get_build(PARENT_BUILD_NUMBER)
