@@ -43,7 +43,7 @@ J = Jenkins('http://localhost:8080/', username=args.username, password=args.pass
 
 PARENT_BUILD_NUMBER = int(os.environ['BUILD_NUMBER'])
 job_name = os.environ['JOB_BASE_NAME']
-job_param = os.environ['name']
+job_param = os.environ['CHANGELIST']
 print(job_param)
 print("-------"+job_name)
 job_url = J[os.environ['JOB_NAME']]
