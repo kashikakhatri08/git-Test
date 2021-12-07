@@ -33,14 +33,15 @@ J = Jenkins('http://localhost:8080/', username=args.username, password=args.pass
 # bld = job_url.get_build(24)
 # bld_time = int(bld.get_timestamp() * 1000)
 # print(bld_time)
+def rest_api_call(url):
+    response = requests.get(url, auth=(args.username, args.password), verify=False)
+    return response
+
 pipeline_data_url = "http://localhost:8080/job/jenkins_pipeline_test1/" + str(24) + "/wfapi/describe"
 pipeline_data = rest_api_call(pipeline_data_url)
 pipeline_data = pipeline_data.json()
 TIME = pipeline_data["startTimeMillis"]
 print(TIME)
-def rest_api_call(url):
-    response = requests.get(url, auth=(args.username, args.password), verify=False)
-    return response
 
 # def was_aborted(text):
 #     occ = re.findall(r"Finished: ABORTED", text)
