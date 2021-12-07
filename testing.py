@@ -31,7 +31,7 @@ args = parser.parse_args()
 J = Jenkins('http://localhost:8080/', username=args.username, password=args.password, ssl_verify=False, timeout=10)
 job_url = J['jenkins_pipeline_test1']
 bld = job_url.get_build(24)
-bld_time = int(int(bld.get_timestamp()) * 1000)
+bld_time = int(bld.get_timestamp() * 1000)
 print(bld_time)
 # def rest_api_call(url):
 #     response = requests.get(url, auth=(args.username, args.password), verify=False)
