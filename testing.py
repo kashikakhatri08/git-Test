@@ -38,9 +38,9 @@ pipeline_data = rest_api_call(pipeline_data_url)
 pipeline_data = pipeline_data.json()
 TIME = pipeline_data["startTimeMillis"]
 print(TIME)
-# def rest_api_call(url):
-#     response = requests.get(url, auth=(args.username, args.password), verify=False)
-#     return response
+def rest_api_call(url):
+    response = requests.get(url, auth=(args.username, args.password), verify=False)
+    return response
 
 # def was_aborted(text):
 #     occ = re.findall(r"Finished: ABORTED", text)
