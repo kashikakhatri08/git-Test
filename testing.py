@@ -28,7 +28,7 @@ parser.add_argument(
     required=True,
     help="Password of the username")
 args = parser.parse_args()
-
+J = Jenkins('http://localhost:8080/', username=args.username, password=args.password, ssl_verify=False, timeout=10)
 job_url = J['jenkins_pipeline_test1']
 bld = job_url.get_build(24)
 bld_time = bld.get_timestamp()
